@@ -1,0 +1,149 @@
+<!-- 
+	Links	http://www.elated.com/articles/html5-audio/	http://www.theparticlelab.com/building-a-custom-html5-audio-player-with-jquery/	https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video
+
+Sample Streams: 
+
+	http://uwstream1.somafm.com/;stream.mp3
+
+	Secret Agent
+	http://xstream1.somafm.com:8002/;stream.mp3
+
+	Indie Pop
+	http://xstream1.somafm.com:8090/;stream.mp3
+
+	Beat Blender
+	http://xstream1.somafm.com:8388/;stream.mp3
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Audio Player</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		body {
+			background-color: #043;
+		}
+		h2 {
+			font-size: 2em;
+			color: #098;
+		}
+		.audio-player-app {
+			padding: 2em 3em 3em 3em;
+		}
+		.audio-player-app h2 {
+			white-space: nowrap;
+		}
+		audio {
+			width: 100%;
+		}
+		.station-links {
+			color: #065;
+			font-size: 1.4em;
+		}
+		.station-links li {
+			list-style: none;
+		}
+		.audio-group {
+			background: #122;
+			border-top: 1px solid #065;
+			border-radius: 15px;
+		}
+		audio.is-playing {
+			box-shadow: 0 0 20px 1px #0c6;
+			border-radius: 15px;
+		}
+	</style>
+	<script type="text/javascript" src="js/player.js"></script>
+	
+</head>
+
+<body>
+	<div class="container-fluid audio-player-app">
+		<div class="row">
+			<div>
+				<h2>HTML5 Audio Player</h2>
+				<audio controls loop class="player" type="audio/mpeg"></audio>
+			</div>
+		</div>
+		<div class="row station-links">
+			<h3>Select station to start playing:</h3>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://uwstream1.somafm.com/;stream.mp3">Groove Salad</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8090/;stream.mp3">Indie Pop</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8388/;stream.mp3">Beat Blender</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8900/;stream.mp3">Digitalis</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8850/;stream.mp3">Suburbs Of Goa</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:2200/;stream.mp3">PopTron</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="http://xstream1.somafm.com:8002/;stream.mp3">Secret Agent</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="http://xstream1.somafm.com:8800/;stream.mp3">Lush</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://uwstream1.somafm.com/;stream.mp3">Groove Salad</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8090/;stream.mp3">Indie Pop</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8388/;stream.mp3">Beat Blender</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8900/;stream.mp3">Digitalis</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8850/;stream.mp3">Suburbs Of Goa</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:2200/;stream.mp3">PopTron</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="http://xstream1.somafm.com:8002/;stream.mp3">Secret Agent</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="http://xstream1.somafm.com:8800/;stream.mp3">Lush</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://uwstream1.somafm.com/;stream.mp3">Groove Salad</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8090/;stream.mp3">Indie Pop</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8388/;stream.mp3">Beat Blender</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8900/;stream.mp3">Digitalis</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:8850/;stream.mp3">Suburbs Of Goa</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+				<a href="http://xstream1.somafm.com:2200/;stream.mp3">PopTron</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="http://xstream1.somafm.com:8002/;stream.mp3">Secret Agent</a>
+			</div>
+			<div class="col-md-2 col-sm-4 col-xs-12  audio-group">
+				<a href="#">Lush</a>
+			</div>
+		</div> <!-- class="row" -->
+	</div> <!-- class="container-fluid" -->
+</body>
+</html>
