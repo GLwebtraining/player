@@ -18,44 +18,26 @@ Soma FM Sample Streams:
 <head>
 	<title>Soma FM Player</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/player.css">
+	
+	<!-- libraries -->	
+	<script type="text/javascript" src="js/lib/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 
-	<style type="text/css">
-		body {
-			background: #eefaff;
-		}
-		audio {
-			width: 100%;
-		}
-		.station-links {
-			color: #065;
-			font-size: 1.2em;
-		}
-		.station-links li {
-			list-style: none;
-		}
-		.station-links h3 {
-			background: #dfeeff;
-		}
-		.station-links a:hover {
-			background: #fc0;
-			padding-left: 1px;
-		}
-		a.is-selected {
-			background-color: #0cd;
-			color: #fff;
-		}
-		.audio-group {
-		}
-		.audio-player-app {
-			margin-top: 1em;
-		}
-	</style>
 	<script type="text/javascript" src="js/player.js"></script>
 </head>
 
 <body>
+	<!-- Template -->
+	<script id="stations-template" type="text/x-handlebars-template">
+		<h3>Select station to start playing:</h3>
+		{{#each stations}}
+		<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+			<a href="{{attributes.url}}">{{attributes.name}}</a>
+		</div>
+		{{/each}}
+	</script>
+	<!-- /Template -->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 col-sm-6">
@@ -120,6 +102,8 @@ Soma FM Sample Streams:
 		<div class="pull-right">
 			<a href="https://github.com/GLwebtraining/player">See the sources here!</a>
 		</div>
+
+		<!-- script data-main="app/main" src="app/js/lib/require-2.1.11.min.js"></script -->
 
 	</div>
 </body>

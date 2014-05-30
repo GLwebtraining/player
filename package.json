@@ -1,0 +1,10 @@
+{
+  "name": "player",
+  "version": "0.0.1",
+  "description": "HTML Player",
+  "author": "rsiryk",
+  "devDependencies": {
+    "express": "3.4.8",
+    "request": "2.34.0"
+  }
+}
