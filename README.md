@@ -25,3 +25,7 @@ To copy it to your machine:
 
 Twitter Bootstrap is used as UI implementation.
 For alternate theming, look in the index-alt.html
+
+### Requires
+- Node.js
+- Express module

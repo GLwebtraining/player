@@ -1,0 +1,29 @@
+body {
+	background: #eefaff;
+}
+audio {
+	width: 100%;
+}
+.station-links {
+	color: #065;
+	font-size: 1.2em;
+}
+.station-links li {
+	list-style: none;
+}
+.station-links h3 {
+	background: #dfeeff;
+}
+.station-links a:hover {
+	background: #fc0;
+	padding-left: 1px;
+}
+a.is-selected {
+	background-color: #0cd;
+	color: #fff;
+}
+.audio-group {
+}
+.audio-player-app {
+	margin-top: 1em;
+}
