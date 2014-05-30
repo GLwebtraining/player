@@ -13,8 +13,8 @@ HTML5 Audio Player
 
 ## To see HTML5 Audio Player live:
 
-- go here: http://glwebtraining.github.io/player/
-- or here: http://glwebtraining.github.io/player/index-alt.html (has different design);
+- go here: http://glwebtraining.github.io/player/src/
+- or here (no backbone): http://glwebtraining.github.io/player/src/index-static.html
 
 To copy it to your machine:
 
@@ -25,3 +25,6 @@ To copy it to your machine:
 
 Twitter Bootstrap is used as UI implementation.
 For alternate theming, look in the index-alt.html
+
+### To run under Node.js
+- Type 'node app' in command line
