@@ -1,0 +1,110 @@
+<!-- 
+	http://www.elated.com/articles/html5-audio/
+	http://www.theparticlelab.com/building-a-custom-html5-audio-player-with-jquery/
+	http://vkmp3.ru/mp3/%E2%80%93%20%D0%9F%D1%83%D1%82%D0%B8%D0%BD%20-%20%D0%A5%D1%83%D0%B9%D0%BB%D0%BE/
+	https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video
+
+Soma FM Sample Streams: 
+	Secret Agent
+	http://xstream1.somafm.com:8002/;stream.mp3
+	Indie Pop
+	http://xstream1.somafm.com:8090/;stream.mp3
+	Cliq Hop IDM
+	http://xstream1.somafm.com:8062/;stream.mp3
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soma FM Player</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/player.css">
+	
+	<!-- libraries -->	
+	<script type="text/javascript" src="js/lib/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="js/player.js"></script>
+</head>
+
+<body>
+	<!-- Template -->
+	<script id="stations-template" type="text/x-handlebars-template">
+		<h3>Select station to start playing:</h3>
+		{{#each stations}}
+		<div class="col-md-2 col-sm-4 col-xs-12 audio-group">
+			<a href="{{attributes.url}}">{{attributes.name}}</a>
+		</div>
+		{{/each}}
+	</script>
+	<!-- /Template -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<h3>Soma HTML5 Audio Player</h3>
+			</div>
+			<div class="col-md-6 col-sm-6 audio-player-app">
+				<audio controls loop class="player" type="audio/mpeg"></audio>
+			</div>
+		</div>
+		<div class="row station-links">
+			<div class="col-md-3 col-sm-3 col-xs-6 audio-group">
+				<h3>Power</h3>
+				<li><a href="http://uwstream2.somafm.com:8400/;stream.mp3">Dubstep Beyond</a></li>
+				<li><a href="http://xstream1.somafm.com:9090/;stream.mp3">BAGeL Radio</a></li>
+				<li><a href="http://xstream1.somafm.com:8040/;stream.mp3">Black Rock FM</a></li>
+				<li><a href="http://uwstream2.somafm.com:5500/;stream.mp3">South By Soma</a></li>
+				<h3>Hard and Hacky</h3>
+				<li><a href="http://xstream1.somafm.com:2504/;stream.mp3">The Trip</a></li>
+				<li><a href="http://xstream1.somafm.com:8062/;stream.mp3">Cliq Hop IDM</a></li>
+				<li><a href="http://xstream1.somafm.com:8300/;stream.mp3">Doomed</a></li>
+				<li><a href="http://xstream1.somafm.com:6200/;stream.mp3">DEF CON Radio</a></li>
+			</div>
+
+			<div class="col-md-3 col-sm-3 col-xs-6 audio-group">
+				<h3>Atmospheric</h3>
+				<li><a href="http://uwstream2.somafm.com/;stream.mp3">Drone Zone</a></li>
+				<li><a href="http://xstream1.somafm.com:2020/;stream.mp3">Mission Control</a></li>
+				<li><a href="http://xstream1.somafm.com:2800/;stream.mp3">Deep Space One</a></li>
+				<li><a href="http://uwstream2.somafm.com:2040/;stream.mp3">SF 10-33</a></li>
+				<h3>Experimental</h3>
+				<li><a href="http://xstream1.somafm.com:8500/;stream.mp3">Illinois Street Lounge</a></li>
+				<li><a href="http://xstream1.somafm.com:8000/;stream.mp3">Space Station Soma</a></li>
+				<li><a href="http://xstream1.somafm.com:8600/;stream.mp3">Sonic Universe</a></li>
+				<li><a href="http://xstream1.somafm.com:5100/;stream.mp3">Earwaves</a></li>
+			</div>
+
+			<div class="col-md-3 col-sm-3 col-xs-6 audio-group">
+				<h3>Easy</h3>
+				<li><a href="http://xstream1.somafm.com:8850/;stream.mp3">Suburbs Of Goa</a></li>
+				<li><a href="http://xstream1.somafm.com:8002/;stream.mp3">Secret Agent</a></li>
+				<li><a href="http://xstream1.somafm.com:8388/;stream.mp3">Beat Blender</a></li>
+				<li><a href="http://xstream1.somafm.com:8900/;stream.mp3">Digitalis</a></li>
+				<h3>Easiest</h3>
+				<li><a href="http://xstream1.somafm.com:8090/;stream.mp3">Indie Pop</a></li>
+				<li><a href="http://xstream1.somafm.com:2200/;stream.mp3">PopTron</a></li>
+				<li><a href="http://xstream1.somafm.com:8800/;stream.mp3">Lush</a></li>
+				<li><a href="http://uwstream1.somafm.com/;stream.mp3">Groove Salad</a></li>
+			</div>
+
+			<div class="col-md-3 col-sm-3 col-xs-6 audio-group">
+				<h3>Vintage</h3>
+				<li><a href="http://xstream1.somafm.com:8700/;stream.mp3">Covers</a></li>
+				<li><a href="http://xstream1.somafm.com:8880/;stream.mp3">Underground 80s</a></li>
+				<li><a href="http://uwstream2.somafm.com:7770/;stream.mp3">Seven Inch Soul</a></li>
+				<h3>Folk</h3>
+				<li><a href="http://xstream1.somafm.com:7000/;stream.mp3">Boot Liquor</a></li>
+				<li><a href="http://xstream1.somafm.com:7400/;stream.mp3">Folk Forward</a></li>
+				<li><a href="http://uwstream2.somafm.com:5400/;stream.mp3">Iceland Airwawes</a></li>
+			</div>
+		</div>
+
+		<div class="pull-right">
+			<a href="https://github.com/GLwebtraining/player">See the sources here!</a>
+		</div>
+
+		<!-- script data-main="app/main" src="app/js/lib/require-2.1.11.min.js"></script -->
+
+	</div>
+</body>
+</html>
